@@ -225,17 +225,13 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    /* Annule le sticky per-th de colors_and_type.css (.tk-table th { position:sticky; top:0; z-index:1 })
-       qui faisait peindre les th par-dessus la 1re ligne tbody */
+    /* Annule le sticky par défaut de colors_and_type.css (.tk-table th { position:sticky; top:0; z-index:1 })
+       qui peignait les th par-dessus la 1re ligne tbody.
+       Attention : renderHeaders() impose position:relative en style inline sur les header-row th
+       (pour que le .resizer absolu soit confiné) — ne pas mettre de top/z-index ici car ils
+       seraient interprétés comme des décalages relatifs et décaleraient la rangée. */
     #main-table th {
-      position: relative;
-      z-index: auto;
-    }
-    /* Sticky au niveau du thead (viewport-relative grâce à overflow:clip sur .positions-card) */
-    #main-table thead {
-      position: sticky;
-      top: 57px;
-      z-index: 10;
+      position: static;
     }
     tr.totals-row th {
       background: var(--surface) !important;
@@ -250,7 +246,7 @@
       font-size: var(--fs-13);
       font-weight: var(--fw-medium);
     }
-    th.sortable { cursor: pointer; user-select: none; position: relative; }
+    th.sortable { cursor: pointer; user-select: none; }
     th .resizer {
       position: absolute;
       right: 0; top: 0; bottom: 0;
