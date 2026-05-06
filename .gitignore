@@ -1,0 +1,25 @@
+# Python virtual environment
+venv/
+
+# Bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Backup and old files
+Backup/
+OLD/
+
+# Editor and OS files
+*.swp
+*.swo
+.DS_Store
+*.log
+
+# Excel exports / personal exports
+*.xlsx
+*.xls
+
+# Node / package files if ever added
+node_modules/
