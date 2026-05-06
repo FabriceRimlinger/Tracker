@@ -1,0 +1,395 @@
+/* ================================================================
+   Tracker Design System — Linear Editorial Minimalism
+   Tokens repainted from the Linear style guide:
+   Inter everywhere, zinc neutrals, single purple accent.
+   Light is default; [data-theme="dark"] flips the scheme.
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---- Surfaces (light) ---- */
+  --bg:               #ffffff;
+  --bg-alt:           #fafafa;
+  --surface:          #f4f4f5;
+  --surface-2:        #ececef;
+
+  /* ---- Text ---- */
+  --text:             #0f0f14;
+  --text-muted:       #6b6b76;
+  --text-dim:         #a0a0ab;
+  --text-on-accent:   #ffffff;
+
+  /* ---- Lines ---- */
+  --border:           #e4e4e7;
+  --border-strong:    #d4d4d8;
+
+  /* ---- Accent (use sparingly: primary action, link underline, focus ring) ---- */
+  --accent:           #5e6ad2;
+  --accent-hover:     #4e5acb;
+  --accent-fade:      rgba(94,106,210,0.08);
+  --accent-ring:      rgba(94,106,210,0.40);
+
+  /* ---- Semantic (gain / loss / warn) ---- */
+  --success:          #1f9d55;   /* desaturated green */
+  --danger:           #c8312b;   /* desaturated red */
+  --warning:          #b97a00;   /* mustard, not Bootstrap yellow */
+  --info:             var(--accent);
+
+  /* ---- Category palette (muted, single-hue per category) ---- */
+  --cat-cto:          #b97a00;   /* mustard */
+  --cat-pea:          #1f9d55;   /* green */
+  --cat-avie:         #2563a6;   /* slate-blue */
+  --cat-rsu:          #8b5cf6;   /* violet (sibling of accent) */
+  --cat-cash:         #6b6b76;   /* neutral */
+  --cat-immo:         #c8312b;   /* brick */
+  --cat-crowd:        #0e7490;   /* teal */
+
+  /* ---- Radii (max 8px per Linear) ---- */
+  --r-xs:             4px;       /* kbd, chips */
+  --r-sm:             6px;       /* buttons, inputs */
+  --r-md:             8px;       /* cards (max) */
+  --r-pill:           999px;     /* avoided in chrome; only for status dots */
+
+  /* ---- Spacing (4px base; 4/8/12/16/24/32/48/64) ---- */
+  --sp-1:             4px;
+  --sp-2:             8px;
+  --sp-3:             12px;
+  --sp-4:             16px;
+  --sp-5:             24px;
+  --sp-6:             32px;
+  --sp-7:             48px;
+  --sp-8:             64px;
+
+  /* ---- Type ---- */
+  --font-sans:        'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:        'JetBrains Mono', 'Berkeley Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Scale: 11 / 13 / 14 / 16 / 18 / 22 / 28 / 36 / 48 / 64 */
+  --fs-11:            11px;
+  --fs-13:            13px;
+  --fs-14:            14px;
+  --fs-16:            16px;
+  --fs-18:            18px;
+  --fs-22:            22px;
+  --fs-28:            28px;
+  --fs-36:            36px;
+  --fs-48:            48px;
+  --fs-64:            64px;
+
+  --fw-regular:       400;
+  --fw-medium:        500;
+  --fw-semibold:      600;
+  --fw-bold:          700;
+
+  --tracking-tight:   -0.005em;  /* −0.5% at headline sizes */
+  --tracking-normal:  0;
+  --tracking-label:   0.02em;    /* mild for UI labels */
+
+  --lh-tight:         1.15;
+  --lh-snug:          1.35;
+  --lh-base:          1.5;
+
+  /* ---- Elevation: flat. Only popovers get a single tiny shadow. ---- */
+  --shadow-popover:   0 2px 8px rgba(0,0,0,0.04);
+  --shadow-none:      none;
+
+  /* ---- Focus ring ---- */
+  --ring:             0 0 0 2px var(--bg), 0 0 0 4px var(--accent-ring);
+}
+
+[data-theme="dark"] {
+  --bg:               #0f0f14;
+  --bg-alt:           #15151b;
+  --surface:          #1a1a20;
+  --surface-2:        #22222a;
+
+  --text:             #ffffff;
+  --text-muted:       #a0a0ab;
+  --text-dim:         #6b6b76;
+
+  --border:           #26262e;
+  --border-strong:    #34343d;
+
+  --accent-fade:      rgba(94,106,210,0.14);
+  --shadow-popover:   0 2px 8px rgba(0,0,0,0.40);
+}
+
+/* ================================================================
+   Base scope — apply via `.tracker` wrapper or globally.
+   ================================================================ */
+
+.tracker,
+.tracker * {
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';  /* Inter stylistic alts */
+}
+
+.tracker {
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs-14);
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================================================
+   Semantic typography — Linear scale, tight tracking, no italics.
+   ================================================================ */
+
+.tk-display {                /* hero numbers / 64px */
+  font-size: var(--fs-64);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+.tk-h1 {
+  font-size: var(--fs-36);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+.tk-h2 {
+  font-size: var(--fs-28);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+.tk-h3 {
+  font-size: var(--fs-22);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+.tk-h4 {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+.tk-body {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+  color: var(--text);
+}
+
+.tk-label {                  /* UI labels, 13px medium */
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+
+.tk-caption {                /* secondary 13px */
+  font-size: var(--fs-13);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}
+
+.tk-micro {                  /* 11px, no caps. Used for meta only */
+  font-size: var(--fs-11);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+}
+
+.tk-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+}
+
+.tk-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.tk-muted   { color: var(--text-muted); }
+.tk-dim     { color: var(--text-dim); }
+.tk-success { color: var(--success); }
+.tk-danger  { color: var(--danger);  }
+.tk-accent  { color: var(--accent);  }
+
+/* No italics — emphasis is weight. */
+.tk-strong { font-weight: var(--fw-semibold); color: var(--text); }
+
+/* ================================================================
+   Card primitive — flat, 1px border, hover = stronger border.
+   ================================================================ */
+
+.tk-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+  color: var(--text);
+  transition: border-color 0.12s ease;
+}
+
+.tk-card:hover {
+  border-color: var(--border-strong);
+}
+
+/* ================================================================
+   Buttons
+   ================================================================ */
+
+.tk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  padding: 8px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+  white-space: nowrap;
+}
+
+.tk-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.tk-btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.tk-btn--primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+.tk-btn--secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+.tk-btn--secondary:hover { border-color: var(--border-strong); background: var(--surface-2); }
+
+.tk-btn--ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+.tk-btn--ghost:hover { color: var(--text); background: var(--surface); }
+
+.tk-btn--sm { padding: 6px 10px; font-size: var(--fs-13); }
+
+/* ================================================================
+   Inputs
+   ================================================================ */
+
+.tk-input {
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  line-height: 1.4;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  width: 100%;
+}
+
+.tk-input::placeholder { color: var(--text-dim); }
+
+.tk-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent-ring);
+}
+
+/* ================================================================
+   Keyboard hint — outlined mono, 11px
+   ================================================================ */
+
+.tk-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xs);
+  line-height: 1;
+}
+
+/* ================================================================
+   Badge / status dot
+   ================================================================ */
+
+.tk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-11);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xs);
+  background: var(--bg);
+}
+
+.tk-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: var(--text-dim);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   Table — dense, 1px borders, no zebra. Hover = surface tint.
+   ================================================================ */
+
+.tk-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--fs-13);
+  font-variant-numeric: tabular-nums;
+}
+
+.tk-table th {
+  text-align: left;
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tk-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.tk-table tbody tr:nth-child(odd) td { background: var(--surface); }
+.tk-table tbody tr:hover td { background: var(--surface-hover, var(--border)); }
+
+.tk-table .num { text-align: right; font-variant-numeric: tabular-nums; }

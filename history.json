@@ -1,11 +1,11 @@
 {
   "2026-05-06": {
-    "total": 797520.55,
+    "total": 798323.95,
     "by_category": {
-      "CTO": 55600.19,
-      "A. Vie": 49867.78,
+      "CTO": 55368.95,
+      "A. Vie": 49881.47,
       "PEA": 95294.25,
-      "AMZ RSU": 596758.33,
+      "AMZ RSU": 597779.28,
       "Yomoni": 0.0,
       "Livret Dev Durable": 0.0,
       "Comptes Courants": 0.0,
@@ -23,58 +23,6 @@
       },
       "PEA": {
         "versements": 77800,
-        "frais": 0
-      },
-      "A. Vie": {
-        "versements": 94920,
-        "frais": 0
-      },
-      "AMZ RSU": {
-        "versements": 452831,
-        "frais": 0
-      },
-      "Yomoni": {
-        "versements": 73800,
-        "frais": 0
-      },
-      "Livret Boursorama": {
-        "versements": 0,
-        "frais": 0
-      },
-      "Livret Dev Durable": {
-        "versements": 0,
-        "frais": 0
-      },
-      "Comptes Courants": {
-        "versements": 0,
-        "frais": 0
-      },
-      "Lendosphère": {
-        "versements": 13036,
-        "frais": 0
-      },
-      "Livret A": {
-        "versements": 0,
-        "frais": 0
-      },
-      "Bourso Epargne": {
-        "versements": 103000,
-        "frais": 0
-      },
-      "Pret immo": {
-        "versements": 0,
-        "frais": 0
-      },
-      "Immobilier": {
-        "versements": 675000,
-        "frais": 0
-      },
-      "Linxéa A Vie": {
-        "versements": 50500,
-        "frais": 0
-      },
-      "Crowdfunding immo": {
-        "versements": 35000,
         "frais": 0
       }
     }

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Tracker — Dashboard</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  html, body { margin:0; padding:0; background: var(--bg); }
+  body { font-family: var(--font-sans); color: var(--text); -webkit-font-smoothing: antialiased; font-size: 14px; }
+  *, *::before, *::after { box-sizing: border-box; }
+  button { font-family: inherit; }
+  @keyframes tk-spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+
+<script src="data.js"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="KpiTrio.jsx"></script>
+<script type="text/babel" src="MarketsStrip.jsx"></script>
+<script type="text/babel" src="FilterPills.jsx"></script>
+<script type="text/babel" src="PositionsTable.jsx"></script>
+<script type="text/babel" src="EditPositionModal.jsx"></script>
+<script type="text/babel" src="ChartsPanel.jsx"></script>
+<script type="text/babel" src="VersementsModal.jsx"></script>
+
+<script type="text/babel">
+function App() {
+  const [rows, setRows] = React.useState(window.SAMPLE_DATA);
+  const [filter, setFilter] = React.useState('ALL');
+  const [refreshing, setRefreshing] = React.useState(false);
+  const [editing, setEditing] = React.useState(null);
+  const [versementsOpen, setVersementsOpen] = React.useState(false);
+  const [dark, setDark] = React.useState(false);
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  }, [dark]);
+
+  React.useEffect(() => {
+    if (window.lucide) window.lucide.createIcons();
+  });
+
+  React.useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setEditing(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const filtered = filter === 'ALL' ? rows : rows.filter(r => r.compte === filter);
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRows(rs => rs.map(r => {
+        const drift = (Math.random() - 0.45) * 0.02;
+        return { ...r, prev_close: r.liquidative, liquidative: +(r.liquidative * (1 + drift)).toFixed(2) };
+      }));
+      setRefreshing(false);
+    }, 800);
+  };
+
+  return (
+    <div className="tracker">
+      <Header
+        onRefresh={handleRefresh}
+        refreshing={refreshing}
+        dark={dark}
+        onToggleDark={() => setDark(d => !d)}
+        onVersements={() => setVersementsOpen(true)}
+      />
+
+      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '24px', display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <KpiTrio rows={rows} />
+
+        <section>
+          <SectionHeader title="Marchés" sub="Intraday · 1d" />
+          <MarketsStrip markets={window.MARKETS} />
+        </section>
+
+        <section>
+          <SectionHeader title="Évolution & allocation" sub="36 mois · répartition par compte" />
+          <ChartsPanel rows={rows} categories={window.CATEGORIES} />
+        </section>
+
+        <section>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 12, gap: 16 }}>
+            <SectionHeader title="Positions" sub={`${filtered.length} ligne${filtered.length === 1 ? '' : 's'} · trier en cliquant sur une colonne`} flush />
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button className="tk-btn tk-btn--secondary tk-btn--sm">
+                <i data-lucide="search" style={{ width: 14, height: 14 }}></i>
+                Rechercher
+                <span className="tk-kbd" style={{ marginLeft: 4 }}>/</span>
+              </button>
+              <button className="tk-btn tk-btn--primary tk-btn--sm" onClick={() => setEditing({ compte: 'CTO', isin: '', libelle: '', parts: 0, pru: 0, liquidative: 0, prev_close: 0 })}>
+                <i data-lucide="plus" style={{ width: 14, height: 14 }}></i>
+                Ajouter
+              </button>
+            </div>
+          </div>
+          <div style={{ marginBottom: 12 }}>
+            <FilterPills categories={window.CATEGORIES} rows={rows} selected={filter} onSelect={setFilter} />
+          </div>
+          <PositionsTable
+            rows={filtered}
+            categories={window.CATEGORIES}
+            onEdit={setEditing}
+            onDelete={(r) => setRows(rs => rs.filter(x => x !== r))}
+          />
+        </section>
+
+        <footer style={{ paddingTop: 16, borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 11, color: 'var(--text-muted)' }}>
+          <span>Données : portfolio.json · Mises à jour via Yahoo Finance</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+            <span className="tk-kbd">⌘</span><span className="tk-kbd">K</span>
+            <span>commandes</span>
+          </span>
+        </footer>
+      </main>
+
+      {versementsOpen && (
+        <VersementsModal onClose={() => setVersementsOpen(false)} />
+      )}
+
+      {editing && (
+        <EditPositionModal
+          row={editing}
+          onClose={() => setEditing(null)}
+          onSave={(d) => {
+            setRows(rs => {
+              const idx = rs.indexOf(editing);
+              if (idx === -1) return [...rs, d];
+              const copy = rs.slice(); copy[idx] = d; return copy;
+            });
+            setEditing(null);
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+function SectionHeader({ title, sub, flush }) {
+  return (
+    <div style={{ marginBottom: flush ? 0 : 12 }}>
+      <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: '-0.005em', color: 'var(--text)' }}>{title}</div>
+      {sub && <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 2 }}>{sub}</div>}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

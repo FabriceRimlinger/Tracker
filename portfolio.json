@@ -8,7 +8,8 @@
     "notes": "",
     "liquidative": 36.2,
     "prev_close": 35.67,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "CTO",
@@ -17,9 +18,10 @@
     "parts": 11.467806,
     "pru": 305.29,
     "notes": "",
-    "liquidative": 336.3,
+    "liquidative": 334.3,
     "prev_close": 328.25,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 3833.69
   },
   {
     "compte": "CTO",
@@ -30,7 +32,8 @@
     "notes": "",
     "liquidative": 80.24,
     "prev_close": 75.92,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 8263.52
   },
   {
     "compte": "CTO",
@@ -39,9 +42,10 @@
     "parts": 41,
     "pru": 72.17,
     "notes": "",
-    "liquidative": 75.71,
-    "prev_close": 74.84,
-    "date_vl": "06/05/2026"
+    "liquidative": 75.74,
+    "prev_close": 74.86,
+    "date_vl": "06/05/2026",
+    "montant": 3105.28
   },
   {
     "compte": "CTO",
@@ -50,9 +54,10 @@
     "parts": 0,
     "pru": 343.04,
     "notes": "",
-    "liquidative": 600,
+    "liquidative": 600.0,
     "prev_close": 606.5,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "CTO",
@@ -63,7 +68,8 @@
     "notes": "",
     "liquidative": 80.6,
     "prev_close": 81.2,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 1612.0
   },
   {
     "compte": "CTO",
@@ -74,7 +80,8 @@
     "notes": "",
     "liquidative": 5.02,
     "prev_close": 5.06,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 1275.49
   },
   {
     "compte": "A. Vie",
@@ -85,7 +92,8 @@
     "notes": "",
     "liquidative": 265.98,
     "prev_close": 259.46,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "A. Vie",
@@ -94,9 +102,10 @@
     "parts": 0,
     "pru": 82.15,
     "notes": "",
-    "liquidative": 88.99,
-    "prev_close": 88.99,
-    "date_vl": "06/05/2026"
+    "liquidative": 90.03,
+    "prev_close": 90.03,
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "A. Vie",
@@ -105,9 +114,10 @@
     "parts": 72.03,
     "pru": 188.41,
     "notes": "",
-    "liquidative": 189.51,
-    "prev_close": 189.68,
-    "date_vl": "06/05/2026"
+    "liquidative": 189.7,
+    "prev_close": 189.51,
+    "date_vl": "06/05/2026",
+    "montant": 13664.09
   },
   {
     "compte": "A. Vie",
@@ -118,7 +128,8 @@
     "notes": "",
     "liquidative": 425.84,
     "prev_close": 420.29,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 8872.97
   },
   {
     "compte": "A. Vie",
@@ -129,7 +140,8 @@
     "notes": "",
     "liquidative": 785.07,
     "prev_close": 786.65,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 7883.12
   },
   {
     "compte": "A. Vie",
@@ -138,9 +150,10 @@
     "parts": 9.4496,
     "pru": 792.64,
     "notes": "",
-    "liquidative": 812,
-    "prev_close": 812,
-    "date_vl": "06/05/2026"
+    "liquidative": 812.0,
+    "prev_close": 812.0,
+    "date_vl": "06/05/2026",
+    "montant": 7673.08
   },
   {
     "compte": "A. Vie",
@@ -162,7 +175,8 @@
     "notes": "",
     "liquidative": 6.56,
     "prev_close": 6.48,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 49190.62
   },
   {
     "compte": "PEA",
@@ -173,7 +187,8 @@
     "notes": "",
     "liquidative": 10.27,
     "prev_close": 10.11,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 7114.34
   },
   {
     "compte": "PEA",
@@ -184,7 +199,8 @@
     "notes": "",
     "liquidative": 9.72,
     "prev_close": 9.73,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 4862.0
   },
   {
     "compte": "PEA",
@@ -195,7 +211,8 @@
     "notes": "",
     "liquidative": 16.17,
     "prev_close": 15.65,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "PEA",
@@ -206,7 +223,8 @@
     "notes": "",
     "liquidative": 180.28,
     "prev_close": 179.44,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 5047.84
   },
   {
     "compte": "PEA",
@@ -217,7 +235,8 @@
     "notes": "",
     "liquidative": 650.83,
     "prev_close": 643.41,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "PEA",
@@ -228,7 +247,8 @@
     "notes": "",
     "liquidative": 366.71,
     "prev_close": 363.38,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 6234.07
   },
   {
     "compte": "PEA",
@@ -239,7 +259,8 @@
     "notes": "",
     "liquidative": 31.41,
     "prev_close": 31.11,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 6628.14
   },
   {
     "compte": "CTO",
@@ -283,7 +304,8 @@
     "notes": "",
     "liquidative": 253.26,
     "prev_close": 253.24,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 11788.21
   },
   {
     "compte": "CTO",
@@ -294,7 +316,8 @@
     "notes": "",
     "liquidative": 77.48,
     "prev_close": 75.87,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "PEA",
@@ -305,7 +328,8 @@
     "notes": "",
     "liquidative": 38.31,
     "prev_close": 37.26,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "CTO",
@@ -316,7 +340,8 @@
     "notes": "",
     "liquidative": 24.71,
     "prev_close": 24.1,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 2470.26
   },
   {
     "compte": "PEA",
@@ -336,9 +361,10 @@
     "parts": 1920,
     "pru": 37.73,
     "notes": "Prix moyen estimé : 50€/share - 100% vested - Fiscalité : 30% sur plus value",
-    "liquidative": 234.94,
-    "prev_close": 232.68,
-    "date_vl": "06/05/2026"
+    "liquidative": 235.35,
+    "prev_close": 232.76,
+    "date_vl": "06/05/2026",
+    "montant": 451864.65
   },
   {
     "compte": "Yomoni",
@@ -490,9 +516,10 @@
     "parts": 0,
     "pru": 8.16,
     "notes": "",
-    "liquidative": 9.9,
+    "liquidative": 9.77,
     "prev_close": 10.32,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "AMZ RSU",
@@ -501,9 +528,10 @@
     "parts": 620,
     "pru": 88.51,
     "notes": "Transféré vers Transatlantique",
-    "liquidative": 234.94,
-    "prev_close": 232.68,
-    "date_vl": "06/05/2026"
+    "liquidative": 235.35,
+    "prev_close": 232.76,
+    "date_vl": "06/05/2026",
+    "montant": 145914.63
   },
   {
     "compte": "CTO",
@@ -512,9 +540,10 @@
     "parts": 0,
     "pru": 8.04,
     "notes": "",
-    "liquidative": 6.86,
+    "liquidative": 6.92,
     "prev_close": 6.44,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "Crowdfunding immo",
@@ -547,7 +576,8 @@
     "notes": "",
     "liquidative": 32.5,
     "prev_close": 31.64,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "CTO",
@@ -558,7 +588,8 @@
     "notes": "",
     "liquidative": 55.93,
     "prev_close": 56.21,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 0.0
   },
   {
     "compte": "CTO",
@@ -569,7 +600,8 @@
     "notes": "",
     "liquidative": 133.5,
     "prev_close": 129.05,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 2556.52
   },
   {
     "compte": "CTO",
@@ -580,7 +612,8 @@
     "notes": "",
     "liquidative": 65.45,
     "prev_close": 64.9,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 2381.73
   },
   {
     "compte": "PEA",
@@ -591,7 +624,8 @@
     "notes": "",
     "liquidative": 80.24,
     "prev_close": 75.92,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 4012.0
   },
   {
     "compte": "CTO",
@@ -602,7 +636,8 @@
     "notes": "",
     "liquidative": 180.28,
     "prev_close": 179.44,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 2515.9
   },
   {
     "compte": "CTO",
@@ -613,7 +648,8 @@
     "notes": "",
     "liquidative": 31.58,
     "prev_close": 31.33,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 9794.54
   },
   {
     "compte": "CTO",
@@ -624,7 +660,8 @@
     "notes": "",
     "liquidative": 104.95,
     "prev_close": 105.45,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 3453.9
   },
   {
     "compte": "CTO",
@@ -633,9 +670,10 @@
     "parts": 19.24,
     "pru": 129.95,
     "notes": "",
-    "liquidative": 119,
+    "liquidative": 119.0,
     "prev_close": 125.1,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 2289.56
   },
   {
     "compte": "CTO",
@@ -644,9 +682,10 @@
     "parts": 59.96,
     "pru": 105.32,
     "notes": "",
-    "liquidative": 107.1,
+    "liquidative": 106.9,
     "prev_close": 105.2,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 6409.72
   },
   {
     "compte": "CTO",
@@ -655,9 +694,10 @@
     "parts": 12.055,
     "pru": 83.03,
     "notes": "",
-    "liquidative": 74.92,
+    "liquidative": 75.21,
     "prev_close": 74.86,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 906.66
   },
   {
     "compte": "CTO",
@@ -666,9 +706,10 @@
     "parts": 803.60272,
     "pru": 5.6,
     "notes": "",
-    "liquidative": 5.85,
+    "liquidative": 5.6,
     "prev_close": 5.7,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 4500.18
   },
   {
     "compte": "A. Vie",
@@ -767,7 +808,8 @@
     "notes": "",
     "liquidative": 31.59,
     "prev_close": 31.33,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 8687.64
   },
   {
     "compte": "PEA",
@@ -778,7 +820,8 @@
     "notes": "",
     "liquidative": 17.59,
     "prev_close": 16.92,
-    "date_vl": "06/05/2026"
+    "date_vl": "06/05/2026",
+    "montant": 3517.6
   },
   {
     "compte": "Linxéa A Vie",
